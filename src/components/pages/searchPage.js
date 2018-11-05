@@ -55,7 +55,7 @@ class searchPage extends React.Component {
         <div className="search-books-bar">
           <Link to="/" className="close-search" >Close</Link>
           <div className="search-books-input-wrapper">
-            <input type="text" placeholder="Search by title or author" autofocus value={this.state.query} onChange={(event) => this.updateQuery(event.target.value)}/>
+            <input type="text" placeholder="Search by title or author" autoFocus value={this.state.query} onChange={(event) => this.updateQuery(event.target.value)}/>
           </div>
         </div>
         <div className="search-books-results">

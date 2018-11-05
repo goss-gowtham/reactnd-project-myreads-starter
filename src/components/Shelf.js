@@ -2,9 +2,6 @@ import React from 'react'
 import Book from './book'
 
 class Shelf extends React.Component {
-  componentDidMount() {
-    console.log(this);
-  }
   render(){
     return (
       <div className="bookshelf">
