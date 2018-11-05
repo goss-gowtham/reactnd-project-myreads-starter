@@ -14,7 +14,8 @@ class searchPage extends React.Component {
         <div className="search-books-results">
           <ol className="books-grid"></ol>
         </div>
-      </div>    );
+      </div>
+    );
   }
 }
 
