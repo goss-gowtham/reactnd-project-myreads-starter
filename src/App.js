@@ -6,7 +6,6 @@ import { Route } from 'react-router-dom'
 import mainPage from './components/pages/mainPage'
 import searchPage from './components/pages/searchPage'
 class BooksApp extends React.Component {
-
   render() {
     return(
       <div>

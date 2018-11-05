@@ -15,6 +15,15 @@ class mainPage extends React.Component {
       this.setState({ books: resp })
     });
   }
+  updateBook = (book,shelf) => {
+    BooksAPI.update(book, shelf)
+    .then(resp => {
+      book.shelf = shelf;
+      this.setState(state => ({
+        books: state.books.filter(b => b.id !== book.id).concat([book]) /*Concatenating to the API with the respective book by it's id*/
+      }))
+    });
+  }
   render(){
     return (
       <div className="list-books">
@@ -23,9 +32,9 @@ class mainPage extends React.Component {
         </div>
         <div className="list-books-content">
           <div>
-            <Shelf  name="Currently Reading" books={this.state.books.filter(book => book.shelf === "currentlyReading")}/>
-            <Shelf  name="Want to Read" books={this.state.books.filter(book => book.shelf === "wantToRead")}/>
-            <Shelf  name="Read" books={this.state.books.filter(book => book.shelf === "read")}/>
+            <Shelf updateBook={this.updateBook} name="Currently Reading" books={this.state.books.filter(b => b.shelf === "currentlyReading")}/>
+            <Shelf updateBook={this.updateBook} name="Want to Read" books={this.state.books.filter(b => b.shelf === "wantToRead")}/>
+            <Shelf updateBook={this.updateBook} name="Read" books={this.state.books.filter(b => b.shelf === "read")}/>
           </div>
         </div>
         <div className="open-search">
