@@ -11,6 +11,12 @@ To get started developing right away:
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
+## How to use the app
+This app requires Node and React to work perfectly, So
+Install all the dependencies and run `localhost:3000` which will take you to the page with all the functionalities
+You can change the shelf by clicking the dropdown from Currently Reading to Want to read. 
+Searching of particular books are also available but restricted to search terms mentioned in the SEARCH_TERMS.md file
+
 ## What You're Getting
 ```bash
 ├── CONTRIBUTING.md
@@ -21,6 +27,11 @@ To get started developing right away:
 │   ├── favicon.ico # React Icon, You may change if you wish.
 │   └── index.html # DO NOT MODIFY
 └── src
+    ├── components # For an organised code on Shelfs and books and search, main packages
+    |   ├── mainPage.js # Used for main page content with 3 dynamic Shelfs
+        ├── searchPage.js # Links, BrowserRouter are used to have a seamless experience
+    ├── book.js # Has an Eye on Books which describes about title and desc
+    ├── shelf.js # three shelfs dynamic stuffs are handled here    
     ├── App.css # Styles for your app. Feel free to customize this as you desire.
     ├── App.js # This is the root of your app. Contains static HTML right now.
     ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
